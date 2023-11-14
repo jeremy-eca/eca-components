@@ -1,0 +1,39 @@
+import {
+  ArgTypes,
+  Canvas,
+  Controls,
+  Description,
+  Meta,
+  Subtitle,
+  Story,
+} from '@storybook/blocks';
+
+import * as ButtonStories from './Button.stories';
+
+# Button
+
+<Meta of={ButtonStories} />
+<Subtitle>A standard button component</Subtitle>
+
+### Styles
+
+<Description of={ButtonStories.Primary} />
+<Canvas>
+  <Story of={ButtonStories.Primary} />
+</Canvas>
+<Canvas>
+  <Story of={ButtonStories.Secondary} />
+</Canvas>
+
+### Properties
+<ArgTypes of={ButtonStories} />
+
+### Playground
+
+Interact with the component and see how it responds to the different input properties.
+
+<Canvas>
+  <Story of={ButtonStories.Controls} />
+</Canvas>
+
+<Controls of={ButtonStories.Controls} />

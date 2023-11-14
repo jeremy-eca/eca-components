@@ -1,8 +1,11 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ['../src/**/*.stories.@(js|jsx)'],
+  stories: [
+    '../src/**/*.mdx',
+    '../src/**/*.stories.@(js|jsx)'],
   addons: [
-    '@storybook/addon-links', //TODO - review these other plugins
+    '@storybook/addon-links',
+    '@storybook/addon-actions',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     "storybook-addon-data-theme-switcher",
