@@ -22,6 +22,12 @@ export default {
   }
 };
 
+export const Default = {
+  args: {
+    type: 'primary'
+  }
+};
+
 export const Primary = {
   args: {
     type: 'primary'
@@ -33,13 +39,6 @@ export const Secondary = {
     type: 'secondary'
   }
 };
-
-export const Controls = {
-  args: {
-    type: 'primary'
-  },
-};
-
 
 export const Clicked = {
   args: {
