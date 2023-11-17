@@ -1,10 +1,10 @@
 import { create } from '@storybook/theming/create';
+import ecaLogo from './.public/eca-logo.svg';
 
 export default create({
   base: 'light',
   brandTitle: 'ECA International',
   brandUrl: 'https://www.eca-international.com/',
-  brandImage:
-    'https://upload.wikimedia.org/wikipedia/commons/f/f3/ECA_logo_.png',
+  brandImage: ecaLogo,
   brandTarget: '_self'
 });
