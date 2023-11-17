@@ -1,15 +1,8 @@
-import {
-  Canvas,
-  Controls,
-  Primary,
-  Meta,
-  Subtitle,
-} from '@storybook/blocks';
+import { Canvas, Controls, Primary, Meta, Subtitle } from '@storybook/blocks';
 
 import * as ButtonStories from './Button.stories';
 
-<Meta of={ButtonStories} />
-# Button
+<Meta of={ButtonStories} /># Button
 <Subtitle>A standard button component</Subtitle>
 
 <Primary />
@@ -18,7 +11,9 @@ import * as ButtonStories from './Button.stories';
 ## Variants
 
 Primary
+
 <Canvas of={ButtonStories.Primary} />
 
 Secondary
+
 <Canvas of={ButtonStories.Secondary} />

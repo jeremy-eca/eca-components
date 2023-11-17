@@ -1,12 +1,17 @@
 {
   "name": "eca-components",
   "version": "0.1.0",
+  "type": "module",
+  "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist/**/*",
     "README.md"
   ],
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
   "scripts": {
     "build": "rollup -c --bundleConfigAsCjs",
     "watch": "rollup --watch -c --bundleConfigAsCjs",
@@ -17,13 +22,15 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build-storybook-docs": "storybook build  --docs",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.5",
+    "@ecainternational/eca-design-tokens": "^1.0.4",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
@@ -46,6 +53,8 @@
     "chromatic": "^9.0.0",
     "daisyui": "^4.0.4",
     "dedent": "^0.7.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
     "npm-run-all": "^4.1.5",
     "polished": "^4.2.2",
     "postcss": "^8.4.31",

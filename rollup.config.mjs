@@ -18,27 +18,27 @@ export default [
       {
         file: packageJson.main,
         format: 'cjs',
-        sourcemap: true,
+        sourcemap: true
       },
       {
         file: packageJson.module,
         format: 'esm',
         exports: 'named',
-        sourcemap: true,
-      },
+        sourcemap: true
+      }
     ],
     plugins: [
       peerDepsExternal(),
       resolve({
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx']
       }),
       commonjs(),
       terser(),
       babel({
         extensions: ['.js', '.jsx'],
-        exclude: 'node_modules/**',
-      }),
+        exclude: 'node_modules/**'
+      })
     ],
-    external: ['react', 'react-dom'],
-  },
+    external: ['react', 'react-dom']
+  }
 ];

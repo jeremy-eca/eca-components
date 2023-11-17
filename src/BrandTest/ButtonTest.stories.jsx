@@ -3,17 +3,17 @@ import BrandTest from './BrandTest';
 export default {
   component: BrandTest,
   title: 'Components/BrandTest',
-  tags: ['autodocs'],
+  tags: ['autodocs']
 };
 
 export const Primary = {
   args: {
-    type: 'primary',
-  },
+    type: 'primary'
+  }
 };
 
 export const Secondary = {
   args: {
-    type: 'secondary',
-  },
+    type: 'secondary'
+  }
 };

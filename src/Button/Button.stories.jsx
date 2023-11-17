@@ -6,14 +6,14 @@ export default {
   component: Button,
   title: 'Components/Button',
   parameters: {
-    componentSubtitle:
-      'A standard button component',
+    componentSubtitle: 'A standard button component'
   },
   argTypes: {
     type: {
       control: 'select',
-      description: 'Defines the colour scheme of the button based on the current theme',
-      options: ['primary', 'secondary'],
+      description:
+        'Defines the colour scheme of the button based on the current theme',
+      options: ['primary', 'secondary']
     },
     onClick: {
       description: 'The function to be called when the button is clicked',
@@ -50,5 +50,3 @@ export const Clicked = {
     await waitFor(() => expect(args.onClick).toHaveBeenCalled());
   }
 };
-
-

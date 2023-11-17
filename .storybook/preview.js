@@ -16,16 +16,16 @@ const preview = {
 
 export const globalTypes = {
   dataTheme: {
-    defaultValue: "light",
+    defaultValue: 'light'
   },
   dataThemes: {
     defaultValue: {
       list: [
-        { name: "ECA Light", dataTheme: "eca-light", color: "#00755e" },
-        { name: "ECA Dark", dataTheme: "eca-dark", color: "#ffb7d5" },
-      ],
-    },
-  },
+        { name: 'ECA Light', dataTheme: 'eca-light', color: '#00755e' },
+        { name: 'ECA Dark', dataTheme: 'eca-dark', color: '#ffb7d5' }
+      ]
+    }
+  }
 };
 
 export default preview;

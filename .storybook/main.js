@@ -3,13 +3,14 @@ const config = {
   stories: [
     '../src/Intro.mdx',
     '../src/**/*.mdx',
-    '../src/**/*.stories.@(js|jsx)'],
+    '../src/**/*.stories.@(js|jsx)'
+  ],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-actions',
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
-    "storybook-addon-data-theme-switcher",
+    'storybook-addon-data-theme-switcher'
   ],
   framework: {
     name: '@storybook/react-vite',
