@@ -66,7 +66,7 @@ jobs:
 
   deploy-documentation:
     needs: build
-    if: ${{ build.steps.release.outputs.release_created }}
+    if: ${{ needs.build.steps.release.outputs.release_created }}
     permissions:
       pages: write
       id-token: write
