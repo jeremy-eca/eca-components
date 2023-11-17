@@ -25,17 +25,63 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+
+      - name: Prettier Check
+        run: npx prettier . --check
+
+  update-release:
+    name: Update Release PR
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Release Please
+        uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          pull-request-title-pattern: 'Release${component} ${version}'
+          release-type: node
+          package-name: '@ecainternational/eca-components'
+
+  publish:
+    name: Publish NPM Package
+    runs-on: ubuntu-latest
+    needs: update-release
+    if: ${{ needs.update-release.steps.release.outputs.release_created }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
           registry-url: 'https://npm.pkg.github.com'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Prettier Check
-        run: npx prettier . --check
-
       - name: Build
         run: npm run build
 
+      - name: Publish NPM Package
+        run: |
+          npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig"
+          cd dist
+          npm publish
+        if: ${{ needs.update-release.steps.release.outputs.release_created }}
+
+  deploy-documentation:
+    name: Deploy Documentation
+    needs: update-release
+    if: ${{ needs.update-release.steps.release.outputs.release_created }}
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Build Storybook Docs
         run: npm run build-storybook-docs
 
@@ -50,33 +96,6 @@ jobs:
         with:
           path: storybook-static/
 
-      - name: Run Release Please
-        uses: google-github-actions/release-please-action@v3
-        id: release
-        with:
-          pull-request-title-pattern: 'Release${component} ${version}'
-          release-type: node
-          package-name: '@ecainternational/eca-components'
-
-      - name: Publish NPM Package
-        run: |
-          npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig"
-          cd dist
-          npm publish
-        if: ${{ steps.release.outputs.release_created }}
-
-  deploy-documentation:
-    name: Deploy Documentation
-    needs: build
-    if: ${{ needs.build.steps.release.outputs.release_created }}
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
