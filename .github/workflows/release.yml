@@ -64,9 +64,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
 
-  deploy:
+  deploy-documentation:
     needs: build
-    if: ${{ jobs.build.steps.release.outputs.release_created }}
+    if: ${{ build.steps.release.outputs.release_created }}
     permissions:
       pages: write
       id-token: write
