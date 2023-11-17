@@ -1,5 +1,6 @@
 {
-  "name": "eca-components",
+  "name": "@ecainternational/eca-components",
+  "description": "ECA Component Library",
   "version": "0.1.0",
   "type": "module",
   "private": false,
@@ -9,6 +10,10 @@
     "dist/**/*",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ECAInternational/eca-components.git"
+  },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
@@ -16,8 +21,6 @@
     "build": "rollup -c --bundleConfigAsCjs",
     "watch": "rollup --watch -c --bundleConfigAsCjs",
     "clean": "rimraf ./dist",
-    "prebuild": "npm clean",
-    "release": "npm build && auto shipit",
     "test": "test-storybook",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -49,7 +52,6 @@
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "^7.5.3",
     "@vitejs/plugin-react": "^3.1.0",
-    "auto": "^10.3.0",
     "autoprefixer": "^10.4.16",
     "boxen": "^5.0.1",
     "chromatic": "^9.0.0",
@@ -88,7 +90,5 @@
   },
   "resolutions": {
     "jackspeak": "2.1.1"
-  },
-  "readme": "ERROR: No README data found!",
-  "_id": "eca-components@0.1.0"
+  }
 }
