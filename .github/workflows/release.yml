@@ -10,6 +10,9 @@ permissions:
   pull-requests: write
   packages: write
 
+env:
+  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 jobs:
   build:
     name: Build & Test
@@ -60,11 +63,10 @@ jobs:
           npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig"
           cd dist
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         if: ${{ steps.release.outputs.release_created }}
 
   deploy-documentation:
+    name: Deploy Documentation
     needs: build
     if: ${{ needs.build.steps.release.outputs.release_created }}
     permissions:
