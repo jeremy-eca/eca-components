@@ -70,7 +70,7 @@ jobs:
 
       - name: Publish NPM Package
         run: |
-          npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig"
+          npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig, peerDependencies, peerDependenciesMeta"
           cd dist
           npm publish
 
