@@ -8,6 +8,10 @@ Uses Storybook for component development and documentation.
 
 https://ecainternational.github.io/eca-components
 
+## Installation
+
+```npm i -D @ecainternational/eca-components```
+
 ## Log in to the registry
 TODO - Rewrite this and add to onboarding guide
 - Create a PAT token with read:package - auth SSO for token

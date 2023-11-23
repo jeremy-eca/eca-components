@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Button(props) {
+export const Button = (props) => {
   const { type, onClick = () => {}, ...others } = props;
 
   return (
@@ -8,4 +8,4 @@ export default function Button(props) {
       {type}
     </button>
   );
-}
+};
