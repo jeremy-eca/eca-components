@@ -24,19 +24,22 @@ export default {
 
 export const Default = {
   args: {
-    type: 'primary'
+    type: 'primary',
+    children: 'Button'
   }
 };
 
 export const Primary = {
   args: {
-    type: 'primary'
+    type: 'primary',
+    children: 'Primary'
   }
 };
 
 export const Secondary = {
   args: {
-    type: 'secondary'
+    type: 'secondary',
+    children: 'Secondary'
   }
 };
 
