@@ -4,8 +4,8 @@
   "version": "1.0.6",
   "type": "module",
   "private": false,
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
   "files": [
     "dist/**/*",
     "README.md"
