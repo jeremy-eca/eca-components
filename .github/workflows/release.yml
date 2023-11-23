@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: ${{env.NODE_VERSION}}
 
       - name: Prettier Check
         run: npx prettier . --check
@@ -59,7 +59,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{env.NODE_VERSION}}
           registry-url: 'https://npm.pkg.github.com'
 
       - name: Install dependencies
@@ -91,7 +91,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: ${{env.NODE_VERSION}}
           registry-url: 'https://npm.pkg.github.com'
 
       - name: Install dependencies
