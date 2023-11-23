@@ -9,6 +9,8 @@ permissions:
   contents: write
   pull-requests: write
   packages: write
+  pages: write
+  id-token: write
 
 env:
   NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -70,14 +72,13 @@ jobs:
           npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig"
           cd dist
           npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   deploy-documentation:
     name: Deploy Documentation
     needs: update-release
     if: ${{ needs.update-release.outputs.release_created }}
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
