@@ -73,8 +73,6 @@ jobs:
           npx clear-package-json package.json > dist/package.json --fields "type, files, private, publishConfig"
           cd dist
           npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   deploy-documentation:
     name: Deploy Documentation
