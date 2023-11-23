@@ -1,7 +1,7 @@
 name: Pull Request
 
 on:
-  push:
+  pull_request:
     branches-ignore:
       - main
 
@@ -23,6 +23,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
+          cache: 'npm'
           node-version: ${{env.NODE_VERSION}}
 
       - name: Install Dependencies
