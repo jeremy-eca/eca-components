@@ -5,9 +5,7 @@ import ecaLight from '@ecainternational/eca-design-tokens/tailwind/eca-light.tai
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  safelist: [
-    { pattern: /btn-./ } //TODO - add more to this safelist
-  ],
+  safelist: [{ pattern: /./ }],
   theme: {
     ...ecaBrand
   },
