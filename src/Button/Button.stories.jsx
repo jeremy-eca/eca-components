@@ -1,4 +1,4 @@
-import Button from './Button';
+import { Button } from './Button';
 import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 
