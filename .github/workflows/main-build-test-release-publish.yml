@@ -51,7 +51,7 @@ jobs:
 
   update-release:
     name: Update Release PR
-    needs: build
+    needs: build-test
     runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
