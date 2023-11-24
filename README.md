@@ -12,14 +12,14 @@ https://ecainternational.github.io/eca-components
 
 ```npm i -D @ecainternational/eca-components```
 
-## Log in to the registry
-TODO - Rewrite this and add to onboarding guide
-- Create a PAT token with read:package - auth SSO for token
-- npm login --scope=@ecainternational --auth-type=legacy --registry=https://npm.pkg.github.com
-- username = GITHUB username
-- email = PAT TOKEN
-
 ## Running Storybook Locally
 
 - Install dependencies ```npm install```
 - Run storybook ```npm run storybook``` - this will open up Storybook in your browser
+
+## Other Commands
+
+- ```npm run build``` - Builds the library in the `dist` folder as an NPM package
+- ```npm run test``` -  Run tests against all stories. Requires storybook to be running first
+- ```npm run build-storybook``` - Builds Storybook to be used in CI tests
+- ```npm run build-storybook-docs``` - Builds Storybook documentation
