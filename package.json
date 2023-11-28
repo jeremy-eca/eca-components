@@ -28,7 +28,7 @@
     "build-storybook-docs": "storybook build  --docs",
     "chromatic": "chromatic --exit-zero-on-changes",
     "prepare": "husky install",
-    "lint": "npx eslint './** --fix'"
+    "lint": "npx eslint './**' --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
