@@ -12,6 +12,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
 jobs:
   build-lint:
     name: Build & Lint
