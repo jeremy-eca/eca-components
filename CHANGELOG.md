@@ -24,7 +24,7 @@
 * Change BrandTest ([adc50ba](https://github.com/ECAInternational/eca-components/commit/adc50ba3c629b60d22295ccbb2aa752791c00618))
 * Change BrandTest ([#26](https://github.com/ECAInternational/eca-components/issues/26)) ([967039f](https://github.com/ECAInternational/eca-components/commit/967039f3ba3dacbc179b2fff347cee42f728cd9b))
 
-## [1.0.12](https://github.com/ECAInternational/eca-components/compare/v1.0.11...v1.0.12) (2023-11-28)
+## [1.0.12](https://github.com/ECAInternational/eca-components/compare/v1.0.12...v1.0.12) (2023-11-28)
 
 
 ### Features
@@ -42,7 +42,7 @@
 * Still trying to fix linting ([7ca3ca6](https://github.com/ECAInternational/eca-components/commit/7ca3ca65a1a6961f040b4f7868171e1423f6a14f))
 * Update Chromatic ([e539334](https://github.com/ECAInternational/eca-components/commit/e539334cde4b9cc3136cd687cb54206b0db2e778))
 
-## [1.0.11](https://github.com/ECAInternational/eca-components/compare/v1.0.11...v1.0.11) (2023-11-27)
+## [1.0.12](https://github.com/ECAInternational/eca-components/compare/v1.0.12...v1.0.12) (2023-11-27)
 
 
 ### Features
@@ -50,7 +50,7 @@
 * Add scripts to readme ([d4e6135](https://github.com/ECAInternational/eca-components/commit/d4e61357d52c3cc7afb0e7c325e6ec174691996d))
 * Remove Test word from BrandTest ([6aed615](https://github.com/ECAInternational/eca-components/commit/6aed6150e62fe2c7570aa6e79ee06069306e2680))
 
-## [1.0.10](https://github.com/ECAInternational/eca-components/compare/v1.0.11...v1.0.11) (2023-11-24)
+## [1.0.10](https://github.com/ECAInternational/eca-components/compare/v1.0.12...v1.0.12) (2023-11-24)
 
 
 ### Features
@@ -62,7 +62,7 @@
 
 * Fix workflow ([7994ac2](https://github.com/ECAInternational/eca-components/commit/7994ac2acd7daa8bb731f9668e7a10497150cf70))
 
-## [1.0.9](https://github.com/ECAInternational/eca-components/compare/v1.0.11...v1.0.11) (2023-11-23)
+## [1.0.9](https://github.com/ECAInternational/eca-components/compare/v1.0.12...v1.0.12) (2023-11-23)
 
 
 ### Bug Fixes
@@ -73,7 +73,7 @@
 * Fix dependabot.yml ([f60d240](https://github.com/ECAInternational/eca-components/commit/f60d24007119742ac38730b42ca8f81f28a4bd5f))
 * Fixing CI build ([7d66898](https://github.com/ECAInternational/eca-components/commit/7d668980f19eb50459c430561d8ba40e8ad367d6))
 
-## [1.0.8](https://github.com/ECAInternational/eca-components/compare/v1.0.7...v1.0.11) (2023-11-23)
+## [1.0.8](https://github.com/ECAInternational/eca-components/compare/v1.0.7...v1.0.12) (2023-11-23)
 
 
 ### Bug Fixes
