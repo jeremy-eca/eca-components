@@ -53,7 +53,7 @@
 
 * Fix workflow ([7994ac2](https://github.com/ECAInternational/eca-components/commit/7994ac2acd7daa8bb731f9668e7a10497150cf70))
 
-## [1.0.9](https://github.com/ECAInternational/eca-components/compare/v1.0.8...v1.0.9) (2023-11-23)
+## [1.0.9](https://github.com/ECAInternational/eca-components/compare/v1.0.9...v1.0.9) (2023-11-23)
 
 
 ### Bug Fixes
@@ -64,7 +64,7 @@
 * Fix dependabot.yml ([f60d240](https://github.com/ECAInternational/eca-components/commit/f60d24007119742ac38730b42ca8f81f28a4bd5f))
 * Fixing CI build ([7d66898](https://github.com/ECAInternational/eca-components/commit/7d668980f19eb50459c430561d8ba40e8ad367d6))
 
-## [1.0.8](https://github.com/ECAInternational/eca-components/compare/v1.0.7...v1.0.8) (2023-11-23)
+## [1.0.8](https://github.com/ECAInternational/eca-components/compare/v1.0.7...v1.0.9) (2023-11-23)
 
 
 ### Bug Fixes
