@@ -1,6 +1,6 @@
 import { userEvent, waitFor, within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
-import Button from './Button';
+import { Button } from './Button';
 
 export default {
   component: Button,
