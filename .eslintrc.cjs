@@ -22,6 +22,7 @@ module.exports = {
   rules: {
     quotes: ['error', 'single'],
     'import/no-extraneous-dependencies': 'off',
+    'import/prefer-default-export': 'off',
     'react/button-has-type': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
