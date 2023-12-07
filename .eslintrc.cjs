@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['airbnb', 'prettier'],
+  extends: ['airbnb', 'prettier', 'plugin:storybook/recommended'],
   overrides: [
     {
       env: {
@@ -21,10 +21,10 @@ module.exports = {
   },
   rules: {
     quotes: ['error', 'single'],
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-extraneous-dependencies': 'off',
     'react/button-has-type': 'off',
     'react/jsx-props-no-spreading': 'off',
-    'import/prefer-default-export': 'off',
+    'react/require-default-props': 'off',
     'global-require': 'off',
     'import/export': 'off'
   }

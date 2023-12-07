@@ -16,7 +16,7 @@ const preview = {
 
 export const globalTypes = {
   dataTheme: {
-    defaultValue: 'light'
+    defaultValue: 'eca-light'
   },
   dataThemes: {
     defaultValue: {

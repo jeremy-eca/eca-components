@@ -14,6 +14,6 @@ export const Primary = {
 
 export const Secondary = {
   args: {
-    type: 'secondary'
+    type: 'info'
   }
 };

@@ -13,7 +13,7 @@ export default {
       control: 'select',
       description:
         'Defines the colour scheme of the button based on the current theme',
-      options: ['primary', 'secondary']
+      options: ['primary', 'info']
     },
     onClick: {
       action: true
@@ -31,17 +31,17 @@ export const Default = {
   }
 };
 
-export const Primary = {
+export const Info = {
   args: {
-    variant: 'primary',
-    children: 'Primary'
+    variant: 'info',
+    children: 'Info'
   }
 };
 
-export const Secondary = {
+export const Error = {
   args: {
-    variant: 'secondary',
-    children: 'Secondary'
+    variant: 'error',
+    children: 'Error'
   }
 };
 
