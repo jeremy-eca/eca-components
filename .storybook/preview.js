@@ -1,6 +1,5 @@
-/** @type { import('@storybook/react').Preview } */
-
 import '../src/index.css';
+import { themes } from '@storybook/theming';
 
 const preview = {
   parameters: {
@@ -8,6 +7,9 @@ const preview = {
       disable: true
     },
     actions: { argTypesRegex: '^on.*' },
+    docs: {
+      theme: themes.light
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -24,8 +26,8 @@ export const globalTypes = {
   dataThemes: {
     defaultValue: {
       list: [
-        { name: 'ECA Light', dataTheme: 'eca-light', color: '#00755e' },
-        { name: 'ECA Dark', dataTheme: 'eca-dark', color: '#ffb7d5' }
+        { name: 'ECA Light', dataTheme: 'eca-light', color: '#ffffff' },
+        { name: 'ECA Dark', dataTheme: 'eca-dark', color: '#000000' }
       ]
     }
   }
