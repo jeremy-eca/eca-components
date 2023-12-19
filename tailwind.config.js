@@ -21,16 +21,9 @@ module.exports = {
   },
   plugins: [
     require('daisyui'),
-    createThemes(
-      {
-        'eca-light': ecaLight,
-        'eca-dark': ecaDark
-      },
-      {
-        defaultTheme: {
-          dark: 'eca-dark'
-        }
-      }
-    )
+    createThemes({
+      'eca-light': ecaLight,
+      'eca-dark': ecaDark
+    })
   ]
 };
