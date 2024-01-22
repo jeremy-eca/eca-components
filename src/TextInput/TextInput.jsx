@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export function TextInput(props) {
-  const { state = 'default', type = 'text', label, description, icon, prefix, suffix, id, disabled, ...others } = props;
+  const { state = 'default', type = 'text', label, description, icon, prefix, suffix, id, ...others } = props;
 
   const border = {
     default: 'border-controls-border',
@@ -23,18 +23,17 @@ export function TextInput(props) {
   };
 
   return (
-    <>
+    <div className='text-neutral-detail-bolder has-[:disabled]:text-controls-content-disabled'>
       {label && (
-        <label htmlFor={id} className={`text-sm block py-1 ${disabled ? 'text-controls-content-disabled' : 'text-neutral-detail-bolder'}`}>
+        <label htmlFor={id} className='text-sm block py-1 transition-all'>
           {label}
           {description && <span className='font-light ps-1'>{description}</span>}
         </label>
       )}
 
       <span
-        className={`p-3 text-sm text-controls-placeholder-text font-regular border rounded relative flex
-        hover:outline hover:outline-2 hover:outline-offset-2
-        focus-within:outline focus-within:outline-2 focus-within:outline-offset-2
+        className={`p-3 text-sm text-controls-placeholder-text font-regular border rounded relative flex transition
+        outline outline-2 outline-offset-2 outline-default-transparent
         has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:border-neutral-detail-paler has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
       >
@@ -44,17 +43,16 @@ export function TextInput(props) {
         <input
           id={id}
           type={type}
-          disabled={disabled}
           {...others}
-          className={`font-light w-full rounded focus-visible:outline-0 bg-transparent text-neutral-body
-               placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-transparent 
+          className={`font-light w-full rounded focus-visible:outline-0 bg-default-transparent text-neutral-body
+               placeholder-controls-placeholder-text placeholder-opacity-60 focus:placeholder-default-transparent 
                disabled:placeholder-controls-content-disabled disabled:bg-neutral-layer-1 disabled:placeholder-opacity-60 disabled:text-opacity-60 disabled:cursor-not-allowed`}
         />
         {suffix && <span className='flex pe-2.5 items-center'>{suffix}</span>}
         {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning-accent' />}
         {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error-accent' />}
       </span>
-    </>
+    </div>
   );
 }
 
@@ -65,7 +63,6 @@ TextInput.propTypes = {
   icon: PropTypes.string,
   prefix: PropTypes.string,
   suffix: PropTypes.string,
-  disabled: PropTypes.bool.isRequired,
   label: PropTypes.string,
   description: PropTypes.string
 };
