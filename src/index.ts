@@ -11,6 +11,9 @@ import { TextInput } from './TextInput/TextInput.tsx';
 import { Chip } from './Chip/Chip.tsx';
 import { Tooltip } from './Tooltip/Tooltip.tsx';
 
+import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
+
+export { Card, CardBody, CardFooter, CardHeader };
 export { Button };
 export { Checkbox };
 export { IconButton };
