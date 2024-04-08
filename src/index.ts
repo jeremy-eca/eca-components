@@ -9,6 +9,8 @@ import { TextInput } from './TextInput/TextInput.tsx';
 import { Chip } from './Chip/Chip.tsx';
 import { Tooltip } from './Tooltip/Tooltip.tsx';
 import { SegmentedControl } from './SegmentedControl/SegmentedControl.tsx';
+import { Stepper, Step } from './Stepper/index.ts';
+
 import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
 import { tailwindPlugin } from './tailwindPlugin.ts';
 import { AutoComplete, AutoCompleteInput, Label, AutoCompleteOption, AutoCompleteOptions, HighlightMatched, DefaultOptionViewer, FieldSet } from './AutoComplete/index.ts';
@@ -25,7 +27,7 @@ export { TextInput };
 export { Chip };
 export { Tooltip };
 export { SegmentedControl };
+export { Stepper, Step };
 export { AutoComplete, Label, AutoCompleteOptions, AutoCompleteOption, AutoCompleteInput, DefaultOptionViewer, HighlightMatched, FieldSet };
-
 // Export the tailwind plugin
 export default tailwindPlugin;

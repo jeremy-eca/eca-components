@@ -5,6 +5,10 @@ export default {
     ...ecaBrand,
 
     extend: {
+      spacing: {
+        '5.5': '1.375rem',
+        '7.5': '1.875rem'
+      },
       transitionDuration: {
         DEFAULT: '200ms'
       },
