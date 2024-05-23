@@ -11,6 +11,8 @@ import { Chip } from './Chip/Chip.tsx';
 import { Tooltip } from './Tooltip/Tooltip.tsx';
 import { SegmentedControl } from './SegmentedControl/SegmentedControl.tsx';
 import { Stepper, Step } from './Stepper/index.ts';
+import { Avatar } from './Avatar/index.ts';
+import { Menu, MenuButton, MenuItem, MenuItems } from './Menu/index.ts';
 
 import { Card, CardBody, CardFooter, CardHeader } from './Card/index.ts';
 import { tailwindPlugin } from './tailwindPlugin.ts';
@@ -37,6 +39,8 @@ export { Stepper, Step };
 export { AutoComplete, AutoCompleteOptions, AutoCompleteOption, AutoCompleteInput, DefaultOptionViewer, HighlightMatched };
 export { Label, FieldSet };
 export { Select, SelectButton, SelectOption, SelectOptions, SelectOptionGroup };
+export { Avatar };
+export { Menu, MenuButton, MenuItem, MenuItems };
 export { Alert, ActionableAlert };
 
 // Export the tailwind plugin
