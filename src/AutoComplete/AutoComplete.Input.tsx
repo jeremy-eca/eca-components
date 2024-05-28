@@ -12,7 +12,7 @@ export function AutoCompleteInput({
 }: ComponentPropsWithRef<typeof Combobox.Input> & {
   state: 'default' | 'error' | 'warning';
 }) {
-  const { open } = useAutoCompleteContext();
+  const { open, value, multiple, setValue } = useAutoCompleteContext();
 
   const border = {
     default: 'border-controls-border',
@@ -32,9 +32,20 @@ export function AutoCompleteInput({
     error: 'focus-within:outline-states-error hover:focus-within:outline-states-error'
   };
 
+  let selectedItems = [];
+  if (multiple && value && Array.isArray(value)) {
+    selectedItems = value;
+  }
+
   const stopPropagation = (e: React.MouseEvent<HTMLInputElement>) => {
     e.currentTarget?.select();
     if (open) e.stopPropagation();
+  };
+
+  // Handler to remove item
+  const handleRemoveItem = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>, item: any) => {
+    event.stopPropagation();
+    setValue(selectedItems.filter((selectedItem) => selectedItem !== item));
   };
 
   return (
@@ -45,16 +56,37 @@ export function AutoCompleteInput({
         has-[:disabled]:border-neutral-detail-paler has-[:disabled]:bg-neutral-layer-1 has-[:disabled]:text-controls-content-disabled has-[:disabled]:outline-0
         ${hover[state]} ${border[state]} ${focus[state]}`}
     >
-      <Combobox.Input
-        className='w-full rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
-               placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
-               disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60'
-        onClick={callAll(stopPropagation, onClick)}
-        {...props}
-      />
-      <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='rounded-full' />
-      {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
-      {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
+      <div className='flex w-full flex-row'>
+        <div className='grow'>
+          <div className='flex flex-wrap gap-2'>
+            {selectedItems.length > 0 &&
+              !props.displayValue &&
+              selectedItems.map((item) => (
+                <div key={item} className='flex flex-row items-center gap-2 rounded border border-b-neutral-detail-pale px-1 py-1.5'>
+                  <span> {item} </span>
+
+                  <IconButton name='delete' variant='standard' size='xsmall' icon={`${'fi-rr-cross-small'}`} className='rounded bg-neutral-detail-paler' onClick={(event) => handleRemoveItem(event, item)} />
+                </div>
+              ))}
+            <div className='flex flex-1 flex-row'>
+              <Combobox.Input
+                className='w-full grow rounded bg-default-transparent text-neutral-body paragraph-sm-lighter placeholder:text-controls-placeholder-text
+         placeholder:text-opacity-60 focus:placeholder:text-default-transparent focus-visible:outline-0 
+         disabled:cursor-not-allowed disabled:bg-neutral-layer-1 disabled:text-opacity-60 disabled:placeholder:text-controls-content-disabled disabled:placeholder:text-opacity-60'
+                onClick={callAll(stopPropagation, onClick)}
+                {...props}
+              />
+            </div>
+          </div>
+        </div>
+        <div className='flex-column flex justify-center'>
+          <div className='flex flex-col justify-center'>
+            <IconButton name='open' variant='standard' size='xsmall' icon={`${open ? 'fi-sr-angle-small-up' : 'fi-sr-angle-small-down'}`} className='rounded-full' />
+          </div>
+          {state === 'warning' && <i className='fi fi-rr-triangle-warning flex items-center ps-3 text-states-warning' />}
+          {state === 'error' && <i className='fi fi-rr-exclamation flex items-center ps-3 text-states-error' />}
+        </div>
+      </div>
     </Combobox.Button>
   );
 }

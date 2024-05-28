@@ -136,7 +136,7 @@ export const Multiple = {
             <Label>
               {label} <span className='ps-1 paragraph-sm-lighter'>Description</span>
             </Label>
-            <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} displayValue={(p: string[]) => p.join(', ')} />
+            <AutoCompleteInput state={state} onChange={(event) => setQuery(event.target.value)} />
             <AutoCompleteOptions onClose={() => setQuery('')}>
               {filteredPeople.length === 0 && (
                 <AutoCompleteOption value='' disabled>
