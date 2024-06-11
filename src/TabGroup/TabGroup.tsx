@@ -1,14 +1,14 @@
-import React, { ReactNode } from 'react';
-import { Tab } from '@headlessui/react';
+import React, { ElementType, ReactNode } from 'react';
+import { Tab, TabGroupProps as HeadlessTabGroupProps } from '@headlessui/react';
 
-interface TabGroupProps {
+export type TabGroupProps = {
   children: ReactNode;
   defaultIndex?: number;
-}
+} & HeadlessTabGroupProps<ElementType>;
 
-export function TabGroup({ children, defaultIndex = 0 }: TabGroupProps) {
+export function TabGroup({ children, defaultIndex = 0, ...props }: TabGroupProps) {
   return (
-    <Tab.Group defaultIndex={defaultIndex}>
+    <Tab.Group defaultIndex={defaultIndex} {...props}>
       <Tab.List className='flex justify-start gap-3'>{children}</Tab.List>
     </Tab.Group>
   );
