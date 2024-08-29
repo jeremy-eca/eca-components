@@ -3,6 +3,7 @@ import { NavHeader } from './NavHeader.tsx';
 import type { MenuItemDetails } from './types';
 import { NavFooter } from './NavFooter.tsx';
 import { TopLevelMenuItem } from './TopLevelMenuItem.tsx';
+import isLinkCurrentLocation from './isLinkCurrentLocation.ts';
 
 interface NavigationMenuProps {
   menuItems: MenuItemDetails[];
@@ -13,8 +14,9 @@ const NAV_EXPANDED_WIDTH = 'min-w-72'; // due to current linting rules 'min-w-${
 const NAV_COLLAPSED_WIDTH = 'min-w-20';
 
 export function NavigationMenu({ url, menuItems }: NavigationMenuProps) {
+  const openItemId = url && menuItems?.find((menuItem) => menuItem.subItems?.find((item) => isLinkCurrentLocation(item.link, url)))?.id;
   const [isNavExpanded, setIsNavExpanded] = useState<boolean>(true);
-  const [expandedMenuItemId, setExpandedMenuItemId] = useState<string>('');
+  const [expandedMenuItemId, setExpandedMenuItemId] = useState<string>(openItemId || '');
 
   const collapseSubItemsExcept = useCallback((id?: string) => setExpandedMenuItemId(id || ''), []);
 
