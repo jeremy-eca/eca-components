@@ -1,5 +1,7 @@
 import React from 'react';
 import { SegmentedControl, SegmentedControlProps } from './SegmentedControl.tsx';
+import { FieldSet } from '../Form/FieldSet.tsx';
+import { Label } from '../Form/Label.tsx';
 
 export default {
   component: SegmentedControl,
@@ -31,15 +33,13 @@ export default {
   },
   args: {
     disabled: false,
-    size: 'medium',
-    description: ''
+    size: 'medium'
   }
 };
 
 export const Default = {
   args: {
-    name: 'default',
-    label: 'Label'
+    name: 'default'
   },
   render: (args: SegmentedControlProps) => (
     <SegmentedControl {...args}>
@@ -53,10 +53,10 @@ export const Default = {
 export const Width = {
   args: {
     name: 'width',
-    label: 'Label'
+    className: 'w-72'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args} className='w-72'>
+    <SegmentedControl {...args}>
       <input type='radio' aria-label='Option' />
       <input type='radio' aria-label='Option' />
       <input type='radio' aria-label='Option' />
@@ -66,8 +66,7 @@ export const Width = {
 
 export const OneDisabled = {
   args: {
-    name: 'one-disabled',
-    label: 'One disabled option'
+    name: 'one-disabled'
   },
   render: (args: SegmentedControlProps) => (
     <SegmentedControl {...args}>
@@ -80,8 +79,7 @@ export const OneDisabled = {
 
 export const AllDisabled = {
   args: {
-    name: 'all-disabled',
-    label: 'All disabled'
+    name: 'all-disabled'
   },
   render: (args: SegmentedControlProps) => (
     <SegmentedControl {...args} disabled>
@@ -96,7 +94,6 @@ export const AllDisabled = {
 export const Small = {
   args: {
     name: 'small',
-    label: 'Small',
     size: 'small'
   },
   render: (args: SegmentedControlProps) => (
@@ -109,8 +106,7 @@ export const Small = {
 
 export const Medium = {
   args: {
-    name: 'medium',
-    label: 'Medium (default)'
+    name: 'medium'
   },
   render: (args: SegmentedControlProps) => (
     <SegmentedControl {...args}>
@@ -121,38 +117,43 @@ export const Medium = {
   )
 };
 
-export const NoLabel = {
+export const WithLabel = {
   args: {
-    name: 'no-label'
+    name: 'with-label'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label htmlFor={args.name}>Label</Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
-export const Description = {
+export const WithDescription = {
   args: {
-    name: 'description',
-    label: 'Label',
-    description: '(required)'
+    name: 'with-description'
   },
   render: (args: SegmentedControlProps) => (
-    <SegmentedControl {...args}>
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-      <input type='radio' aria-label='Option' />
-    </SegmentedControl>
+    <FieldSet>
+      <Label htmlFor={args.name}>
+        Label<span className='ps-1 paragraph-sm-lighter'>Description</span>
+      </Label>
+      <SegmentedControl {...args}>
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+        <input type='radio' aria-label='Option' />
+      </SegmentedControl>
+    </FieldSet>
   )
 };
 
 export const Highlights = {
   args: {
-    name: 'Highlights',
-    label: 'Label'
+    name: 'Highlights'
   },
   render: (args: SegmentedControlProps) => (
     <SegmentedControl {...args}>
