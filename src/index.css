@@ -6,11 +6,3 @@
 html, body {
   @apply h-full;
 }
-
-.innerZoomElementWrapper {
-  @apply bg-neutral-layer-1;
-}
-
-#storybook-root {
-  @apply bg-neutral-layer-1 p-4;
-}
