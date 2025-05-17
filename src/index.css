@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 @import '@flaticon/flaticon-uicons/css/all/all.css';
 
+html, body {
+  @apply h-full;
+}
+
 .innerZoomElementWrapper {
   @apply bg-neutral-layer-1;
 }
