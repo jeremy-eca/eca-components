@@ -1,0 +1,17 @@
+import { Canvas, Controls, Primary, Meta, Subtitle, Title } from '@storybook/blocks';
+import * as MainLayoutStories from './MainLayout.stories';
+
+<Meta of={MainLayoutStories} />
+<Title>Components/MainLayout</Title>
+<Subtitle>Main Layout with Navigation</Subtitle>
+
+<Primary />
+<Controls />
+
+The MainLayout component provides a consistent layout structure with:
+
+- Top navigation bar with breadcrumbs and user controls
+- Side navigation menu using the NavigationMenu component
+- Main content area that scrolls independently
+
+Use this component to wrap your application content for a consistent layout across pages.
