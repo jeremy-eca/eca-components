@@ -27,7 +27,7 @@
     "build-storybook-docs": "npm run copy-tokens && storybook build  --docs",
     "test": "vitest --coverage.enabled true",
     "chromatic": "chromatic --exit-zero-on-changes",
-    "copy-tokens": "ncp node_modules/@ecainternational/eca-design-tokens/css/ tokens",
+    "copy-tokens": "npx ncp node_modules/@ecainternational/eca-design-tokens/css/ tokens",
     "lint": "npx eslint ./** --fix",
     "typecheck": "tsc",
     "prettify": "npx prettier . --write",
