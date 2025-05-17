@@ -21,6 +21,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "scripts": {
+    "dev": "npm run copy-tokens && storybook dev -p 6006",
     "build": "rollup -c --bundleConfigAsCjs",
     "build-storybook": "npm run copy-tokens && storybook build",
     "build-storybook-docs": "npm run copy-tokens && storybook build  --docs",
